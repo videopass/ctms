@@ -1,0 +1,40 @@
+{
+	"name": "@videopass/ctms",
+	"version": "0.0.8",
+	"description": "videopass ctms",
+	"main": "lib/index.js",
+	"typings": "lib/index",
+	"scripts": {
+		"start": "npm run build",
+		"test": "jest --watchAll",
+		"build": "tsc -p .",
+		"build:live": "nodemon --watch 'src/**/*.ts' --exec \"ts-node\" src/index.ts",
+		"build:export": "nodemon",
+		"update": "ncu -u  && npm install",
+		"deploy": "rm -r ./lib && tsc && bump && npm publish --access public"
+	},
+	"dependencies": {
+		"@videopass/ctms-core": "^0.0.1",
+		"@videopass/ctms-model": "^0.0.7",
+		"@videopass/services": "^0.0.19",
+		"delay": "^5.0.0",
+		"fs-extra": "^11.1.1",
+		"matcher": "^5.0.0",
+		"moment": "^2.29.4",
+		"rambda": "^7.5.0"
+	},
+	"devDependencies": {
+		"@types/jest": "^29.5.1",
+		"@types/node": "^20.1.2",
+		"@types/winston": "^2.4.4",
+		"axios": "^1.4.0",
+		"jest": "^29.5.0",
+		"jest-watch-typeahead": "^2.2.2",
+		"nodemon": "^2.0.22",
+		"npm-check-updates": "^16.10.12",
+		"ts-jest": "^29.1.0",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.0.4",
+		"version-bump-prompt": "^6.1.0"
+	}
+}
